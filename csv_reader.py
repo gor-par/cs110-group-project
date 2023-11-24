@@ -18,8 +18,7 @@ class CsvReader:
             self.__parse_csv()
             self.__file.close()
 
-            self.length = len(self.rows)
-            self.column_count = len(self.fieldnames)
+            self.update_metadata()
 
         except InvalidFilenameError:
             # re-raises the errors for the caller to handle
@@ -30,7 +29,7 @@ class CsvReader:
         Checks the path to be a csv file and raises an error if not
 
         Args:
-        path (str): pahth to verify
+        path (str): path to verify
         '''
 
         if path[-3:].lower() != 'csv':
@@ -50,6 +49,10 @@ class CsvReader:
         for row in reader:
             for column in row:
                 row[column] = self.__round_if_numeric(row[column])
+
+                # Adds None if its empty string
+                row[column] = None if row[column] == "" else row[column]
+
             rows.append(row)
 
         self.rows = rows
@@ -67,3 +70,12 @@ class CsvReader:
             return round(float(string), 3)
         except ValueError:
             return string
+        except TypeError:
+            return string
+
+    def update_metadata(self):
+        '''
+        updates row and column count after change
+        '''
+        self.length = len(self.rows)
+        self.column_count = len(self.fieldnames)

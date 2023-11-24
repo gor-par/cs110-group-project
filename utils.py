@@ -37,6 +37,6 @@ class InvalidFilenameError(Exception):
     A custom exception for utilizing functions to listen to 
     '''
 
-    def __init__(self, message="Invalid CSV"):
+    def __init__(self, message):
         self.message = message
         super().__init__(self.message)

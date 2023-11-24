@@ -65,13 +65,17 @@ git push -u origin development
 
 #2 Data Reading
 
-- Python app to read the CSV and return an object containing the files
+- ~~Python class to read the CSV and return an object containing the files~~
 
-- Table reader as a class
+- ~~Table drawer program (didn't have time to refactor as a class)~~
 
-  - Add horizontal shortening
+  - ~~Add horizontal shortening~~
 
-#3 ...
+#3: Data Sanitization
+
+- Sanitizer, takes two paths, reads csv from first and writes into second
+
+  - BEWARE: only deals with numerical data, DO NOT pollute text data
 
 - pollute the dataset to clear them (duplicates, empties)
 
@@ -112,10 +116,3 @@ start_day: march 31
 findresutls(mean, max_temerature, filters)
 
 read
-
-# Memo of the code.
-
-## CSV Reader
-
-Defines classes Invalid CSV Filename and CSV Reader
-Invalid
