@@ -73,17 +73,9 @@ git push -u origin development
 
 #3: Data Sanitization
 
-- Sanitizer, takes two paths, reads csv from first and writes into second
+- ~~Sanitizer, takes two paths, reads csv from first and writes into second~~
 
   - BEWARE: only deals with numerical data, DO NOT pollute text data
-
-- pollute the dataset to clear them (duplicates, empties)
-
-- write cleaning functions
-
-- Gradual filtration of results (save in different intermediate csv files, one query at a time)
-
-- text interface for building queries (give me options to choose)
 
 - filter (queries to filter the data)
 
