@@ -77,11 +77,17 @@ git push -u origin development
 
   - BEWARE: only deals with numerical data, DO NOT pollute text data
 
-- filter (queries to filter the data)
+#4: Data Analysis
+
+- ~~filter (queries to filter the data)~~
+
+  - ~~FilterOption class to help writing the queries~~
 
 - mean | median | range.... stuff like this
 
-- find_results (function, column, filters)
+- maybe a wrapper function for data.filter(filterOptions).analysis
+
+- plotting
 
 - add the docstrings and stuff written in the requirements
 
