@@ -101,8 +101,8 @@ def add_metadata(table, dataset, table_length):
     table_length: length of the table, including the edges
 
     '''
-    metadata_row = f'{dataset.filename}: {
-        dataset.length} Rows, {dataset.column_count} Columns'
+    metadata_row = f'{dataset.filename}:' \
+        f' {dataset.length} Rows, {dataset.column_count} Columns'
     table += format_to_length_n(metadata_row, table_length - 2) + "|"
 
     return table
@@ -145,7 +145,7 @@ def populate_table(table, rows, column_length, row_break, is_table_long):
     str: the edited table
     '''
     for row in rows:
-        values = shorten_list(row) if is_table_long else row
+        values = shorten_list(row) if is_table_long else row.values()
 
         for value in values:
             table += format_to_length_n(str(value), column_length) + "|"

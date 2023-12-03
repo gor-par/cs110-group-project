@@ -1,6 +1,3 @@
-from csv_reader import CsvReader
-
-
 from typing import Literal, Optional
 from filter_functions import functions, function_support_per_type as function_support
 
@@ -11,7 +8,7 @@ class FilterOption:
                  function: str,
                  column: str,
                  target,
-                 format: Optional[str]
+                 format: Optional[str] = None
                  ):
 
         self.type = filter_type
