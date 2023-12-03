@@ -101,8 +101,8 @@ def add_metadata(table, dataset, table_length):
     table_length: length of the table, including the edges
 
     '''
-    metadata_row = f'{dataset.filename}: {
-        dataset.length} Rows, {dataset.column_count} Columns'
+    metadata_row = f'{dataset.filename}:' \
+                   f' {dataset.length} Rows, {dataset.column_count} Columns'
     table += format_to_length_n(metadata_row, table_length - 2) + "|"
 
     return table
