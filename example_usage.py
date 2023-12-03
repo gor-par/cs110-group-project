@@ -14,7 +14,7 @@ filter_options = [
 ]
 
 
-test = CsvReader('nordics_weather_ORIGINAL.csv')
+test = CsvReader('nordics_weather.csv')
 
 print(len(filter(test.rows, filter_options)))
 # print(filter(test.rows, filter_options))
