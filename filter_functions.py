@@ -31,6 +31,7 @@ def is_smaller(value, target):
 def is_before(value, target, format):
     value_date = datetime.strptime(value, format).date(),
     target_date = datetime.strptime(target, format).date(),
+    print(value_date, target_date, value_date < target_date)
     return value_date < target_date
 
 

@@ -2,7 +2,6 @@ from csv_reader import CsvReader
 from utils import get_input, ValidationState, InvalidFilenameError
 import argparse
 
-
 parser = argparse.ArgumentParser(
     description='Dsiplays a table with metadata and example rows'
 )
@@ -64,7 +63,7 @@ def draw_table(dataset, column_length=10):
         field_count = 11
         is_table_long = True
 
-    table_length = field_count*(column_length+1) + 1
+    table_length = field_count * (column_length + 1) + 1
 
     row_break = "\n" + ("-" * table_length) + "\n" + "|"
     table = row_break
@@ -145,7 +144,7 @@ def populate_table(table, rows, column_length, row_break, is_table_long):
     str: the edited table
     '''
     for row in rows:
-        values = shorten_list(row) if is_table_long else row
+        values = shorten_list(row) if is_table_long else row.values()
 
         for value in values:
             table += format_to_length_n(str(value), column_length) + "|"
