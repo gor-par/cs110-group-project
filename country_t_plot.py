@@ -24,11 +24,15 @@ for row in filter(dataset.rows, country_filter):
     pres.append(row.get('pressure_mb'))
 
 # plot the graphs using the lists as x and y values
-plt.plot(feels, temp, 'y', label='relation of feeling')
-plt.plot(wet, temp, 'b', label='depending on humidity')
-plt.plot(pres, temp, 'r', label='depending on pressure')
+plt.plot(temp, feels, 'r', label='relation of feeling')
+plt.plot(temp, wet, 'g', label='depending on humidity')
+plt.plot(temp, pres, 'b', label='depending on pressure')
 
 plt.xlabel('temperature')
 plt.ylabel('other factors')
+plt.xlim(0, 40)
+plt.ylim(-10, 50)
+plt.title(f'Temperature and other factors for {prompt}')
 plt.legend()  # add a legend to show the labels
 plt.show()
+
