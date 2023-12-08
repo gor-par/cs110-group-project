@@ -20,7 +20,3 @@ for row in dataset.rows:
 plt.show()
 
 
-plt.title("Boxplot of Average Monthly Temperature in Yerevan, Armenia (2023)")
-plt.xlabel("Month")
-plt.ylabel("Temperature (°C)")
-plt.show()
