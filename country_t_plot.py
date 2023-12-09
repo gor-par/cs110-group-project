@@ -4,9 +4,10 @@ from csv_reader import CsvReader
 from filter import FilterOption, filter
 import tools
 
+plt.style.use('dark_background')
 dataset = CsvReader('GlobalWeatherRepository.csv')
 
-plt.figure(facecolor="darkgrey", edgecolor="white")
+plt.figure(edgecolor="white")
 prompt = input("enter the desired country/ies to plot temp for: ")
 country_filter = [
     FilterOption('string', 'equal', 'country', [f'{prompt}'])

@@ -4,9 +4,10 @@ from csv_reader import CsvReader
 import matplotlib.pyplot as plt
 import numpy as np
 
+plt.style.use('dark_background')
 dataset = CsvReader('GlobalWeatherRepository.csv')
 
-plt.figure(figsize=(10, 6), facecolor="darkgrey", edgecolor="black")
+plt.figure(figsize=(10, 6), edgecolor="black")
 
 regions_list = []
 humidity_list = []

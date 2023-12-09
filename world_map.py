@@ -4,6 +4,7 @@ from csv_reader import CsvReader
 from filter import FilterOption, filter
 import math
 
+plt.style.use('dark_background')
 dataset = CsvReader('GlobalWeatherRepository.csv')
 
 fig, ax = plt.subplots()
@@ -26,9 +27,21 @@ for row in dataset.rows:
     lon = row.get('longitude')
 
     temp = row.get('temperature_celsius')
-    if temp > 0:
+    # Assume temp is the temperature variable
+    # Assume temp is the temperature variable
+    if temp > 40:
         ax.text(lon, lat, '+', color='darkred')
-    if temp < 0:
+    elif 30 < temp <= 40:
+        ax.text(lon, lat, '+', color='red')
+    elif 20 < temp <= 30:
+        ax.text(lon, lat, '+', color='orange')
+    elif 10 < temp <= 20:
+        ax.text(lon, lat, '+', color='yellow')
+    elif 0 < temp <= 10:
+        ax.text(lon, lat, '+', color='green')
+    elif -10 < temp <= 0:
+        ax.text(lon, lat, '+', color='blue')
+    else:
         ax.text(lon, lat, '+', color='darkblue')
 
 plt.show()

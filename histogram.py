@@ -3,6 +3,7 @@ from filter import FilterOption, filter
 from csv_reader import CsvReader
 import matplotlib.pyplot as plt
 
+plt.style.use('dark_background')
 dataset = CsvReader('GlobalWeatherRepository.csv')
 
 countries = set()  # use a set to store the unique countries
