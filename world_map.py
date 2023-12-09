@@ -7,7 +7,7 @@ import math
 dataset = CsvReader('GlobalWeatherRepository.csv')
 
 fig, ax = plt.subplots()
-img = plt.imread('hope.png')
+img = plt.imread('map.png')
 ax.imshow(img, extent=[-180, 180, -90, 90])
 
 
