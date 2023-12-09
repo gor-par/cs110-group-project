@@ -28,7 +28,6 @@ for row in dataset.rows:
 
     temp = row.get('temperature_celsius')
     # Assume temp is the temperature variable
-    # Assume temp is the temperature variable
     if temp > 40:
         ax.text(lon, lat, '+', color='darkred')
     elif 30 < temp <= 40:
