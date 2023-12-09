@@ -25,7 +25,7 @@ for row in filter(dataset.rows, country_filter):
     pres.append(row.get('pressure_mb'))
 
 # plot the graphs using the lists as x and y values
-plt.plot(temp, feels, 'r', label='relation of feeling')
+plt.plot(temp, feels, 'y', label='relation of feeling')
 plt.plot(temp, wet, 'g', label='depending on humidity')
 plt.plot(temp, pres, 'b', label='depending on pressure')
 
