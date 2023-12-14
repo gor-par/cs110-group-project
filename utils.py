@@ -38,5 +38,8 @@ class InvalidFilenameError(Exception):
     '''
 
     def __init__(self, message):
+        """
+        Initialize the custom exception with a given message.
+        """
         self.message = message
         super().__init__(self.message)

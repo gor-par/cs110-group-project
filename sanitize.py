@@ -16,8 +16,13 @@ parser.add_argument(
 column_means = {}
 dataset_none_indices = {}
 
-
 def cli():
+    """
+    Command-line interface for handling CSV data.
+    Parses command-line arguments, validates input, and processes the CSV file.
+    Returns:
+        None: Prints messages to the console.
+    """
     args = parser.parse_args()
     validation_state = validate_input(args)
     if not validation_state.ok:
@@ -25,16 +30,20 @@ def cli():
         return
 
     dataset = CsvReader(args.source)
+    column_means = {}
+    dataset_none_indices = {}
 
     for column in dataset.fieldnames:
         column_means[column] = 0
         dataset_none_indices[column] = []
 
-    (no_duplicates, duplicate_count) = drop_duplicates(dataset.rows)
-    (no_nones, none_count) = handle_nones(no_duplicates)
+    no_duplicates, duplicate_count = drop_duplicates(dataset.rows)
+    no_nones, none_count = handle_nones(no_duplicates)
     write_csv(no_nones, args.destination, dataset.fieldnames)
+
     print(f'{duplicate_count} duplicates are dropped, '
           f'{none_count} empty values are replaced with the mean')
+
 
 
 def validate_input(args):
@@ -109,7 +118,7 @@ def find_nones(rows):
 
 def count_column_means(rows):
     '''
-    counts the mean of the columns, excluding None value rows from the 
+    Counts the mean of the columns, excluding None value rows from the 
     calculation
     '''
 

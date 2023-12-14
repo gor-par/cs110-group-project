@@ -1,6 +1,6 @@
+import argparse
 from csv_reader import CsvReader
 from utils import get_input, ValidationState, InvalidFilenameError
-import argparse
 
 parser = argparse.ArgumentParser(
     description='Dsiplays a table with metadata and example rows'
@@ -12,16 +12,18 @@ parser.add_argument('-cl', '--column-length', default="10", type=int,
 
 
 def cli():
+    """
+    Command-line interface for processing CSV data.
+    """
     args = parser.parse_args()
     validation_state = validate_input(args)
     if not validation_state.ok:
         print(validation_state.message)
         return
 
-    # All the invalid file errors were handled above
     dataset = CsvReader(args.path)
-
     draw_table(dataset, args.column_length)
+
 
 
 def validate_input(args):
