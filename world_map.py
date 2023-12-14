@@ -1,14 +1,14 @@
+import math
+from csv_reader import CsvReader
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-from csv_reader import CsvReader
 from filter import FilterOption, filter
-import math
 
 plt.style.use('dark_background')
 dataset = CsvReader('GlobalWeatherRepository.csv')
 
 fig, ax = plt.subplots()
-img = plt.imread('map.png')
+img = plt.imread('visuals/map.png')
 ax.imshow(img, extent=[-180, 180, -90, 90])
 
 

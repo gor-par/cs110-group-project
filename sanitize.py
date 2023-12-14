@@ -1,7 +1,7 @@
 import csv
+import argparse
 from csv_reader import CsvReader
 from utils import get_input, ValidationState, InvalidFilenameError
-import argparse
 
 
 parser = argparse.ArgumentParser(
@@ -33,8 +33,8 @@ def cli():
     (no_duplicates, duplicate_count) = drop_duplicates(dataset.rows)
     (no_nones, none_count) = handle_nones(no_duplicates)
     write_csv(no_nones, args.destination, dataset.fieldnames)
-    print(f'{duplicate_count} duplicates are dropped, {
-        none_count} empty values are replaced with the mean')
+    print(f'{duplicate_count} duplicates are dropped, '
+          f'{none_count} empty values are replaced with the mean')
 
 
 def validate_input(args):

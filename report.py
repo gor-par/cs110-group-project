@@ -8,13 +8,9 @@ PICTURE_FOLDER = "pictures"
 
 # Define the list of pictures and their descriptions
 pictures = [
-    {"name": "world_map.png", "description": "Detailed world map illustration"},
-    {"name": "histogram.png", "description": "Histogram chart displaying data distribution"},
-    {"name": "boxplots.png", "description": "Boxplots visualizing statistical data"},
-    {"name": "australia.png", "description": "Aerial view of Australia's landscapes"},
-    {"name": "canada.png", "description": "Scenic views of Canada's natural beauty"},
-    {"name": "germany.png", "description": "Cultural landmarks and landscapes in Germany"},
-    {"name": "armenia.png", "description": "Historical sites and natural beauty of Armenia"},
+    {"name": "visuals/world_map.png", "description": "Detailed world map illustration"},
+    {"name": "visuals/histogram.png", "description": "Histogram chart displaying data distribution"},
+    {"name": "visuals/boxplots.png", "description": "Boxplots visualizing statistical data"},
 ]
 
 # Define the html template using Jinja2

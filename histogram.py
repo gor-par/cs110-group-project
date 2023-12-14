@@ -1,7 +1,7 @@
-from tools import get_column_mean, get_values
-from filter import FilterOption, filter
-from csv_reader import CsvReader
 import matplotlib.pyplot as plt
+from csv_reader import CsvReader
+from filter import FilterOption, filter
+from tools import get_column_mean, get_values
 
 plt.style.use('dark_background')
 dataset = CsvReader('GlobalWeatherRepository.csv')
