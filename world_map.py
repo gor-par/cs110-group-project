@@ -22,12 +22,12 @@ ax.set_xlabel('Latitude')
 ax.set_ylabel('Longitude')
 
 for row in dataset.rows:
-    # get the latitude and longitude values from the dictionary
+    # get the latitude and longitude values
     lat = row.get('latitude')
     lon = row.get('longitude')
 
     temp = row.get('temperature_celsius')
-    # Assume temp is the temperature variable
+    #   temp is the temperature variable
     if temp > 40:
         ax.text(lon, lat, '+', color='darkred')
     elif 30 < temp <= 40:
