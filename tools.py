@@ -16,6 +16,9 @@ def get_values(rows, column):
 
 
 def get_column_mean(rows, column):
+    """
+    Calculate the mean of a specified column.
+    """
     values = get_values(rows, column)
 
     mean = statistics.mean(values)
@@ -24,6 +27,9 @@ def get_column_mean(rows, column):
 
 
 def get_column_median(rows, column):
+    """
+    Calculate the median of a specified column.
+    """
     values = get_values(rows, column)
 
     median = statistics.median(values)
@@ -32,6 +38,9 @@ def get_column_median(rows, column):
 
 
 def get_column_mode(rows, column):
+"""
+Find the mode of a specified column.
+"""
     values = get_values(rows, column)
 
     mode = statistics.mode(values)
@@ -40,6 +49,9 @@ def get_column_mode(rows, column):
 
 
 def get_column_stdev(rows, column):
+    """
+    Calculate the standard deviation of a specified column.
+    """
     values = get_values(rows, column)
 
     stdev = statistics.stdev(values)
@@ -48,6 +60,9 @@ def get_column_stdev(rows, column):
 
 
 def get_column_min(rows, column):
+    """
+    Find the minimum value of a specified column.
+    """
     values = get_values(rows, column)
 
     min_value = min(values)
@@ -56,6 +71,9 @@ def get_column_min(rows, column):
 
 
 def get_column_max(rows, column):
+    """
+    Find the maximum value of a specified column.
+    """
     values = get_values(rows, column)
 
     max_value = max(values)
@@ -64,6 +82,9 @@ def get_column_max(rows, column):
 
 
 def get_column_range(rows, column):
+    """
+    Calculate the range of a specified column.
+    """
     values = get_values(rows, column)
 
     min_value = min(values)
