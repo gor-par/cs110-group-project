@@ -1,8 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
 from csv_reader import CsvReader
-from tools import get_column_mean
-from filter import FilterOption, filter
 
 # Loading the dataset
 dataset = CsvReader('GlobalWeatherRepository.csv')
