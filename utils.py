@@ -45,3 +45,7 @@ class InvalidFilenameError(Exception):
         """
         self.message = message
         super().__init__(self.message)
+
+
+def fahr_to_cel(fahr):
+    return (fahr - 32) * 5/9

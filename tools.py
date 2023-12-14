@@ -13,6 +13,19 @@ def get_values(rows, column):
     - list of float: A list containing the numeric values from the specified column.
 
     """
+
+    # # remove
+
+    # arr = []
+    # for row in rows:
+    #     if (row[column] is None):
+    #         continue
+    #     arr.append(float(row[column]))
+
+    # return arr
+
+    # # stop
+
     return [float(row[column]) for row in rows]
 
 
