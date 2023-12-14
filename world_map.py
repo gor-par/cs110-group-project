@@ -1,6 +1,6 @@
 import math
-from csv_reader import CsvReader
 import matplotlib.pyplot as plt
+from csv_reader import CsvReader
 import matplotlib.patches as patches
 from filter import FilterOption, filter
 
@@ -14,6 +14,9 @@ ax.imshow(img, extent=[-180, 180, -90, 90])
 
 # define a function that formats the coordinates
 def format_coord(x, y):
+    """
+    Format coordinates: lon=x.xx, lat=y.yy.
+    """
     return f'lon={x:.2f}, lat={y:.2f}'
 
 
