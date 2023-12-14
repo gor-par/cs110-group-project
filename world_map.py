@@ -1,8 +1,8 @@
 import math
 import matplotlib.pyplot as plt
-from csv_reader import CsvReader  # Assuming you have a CSV reader module
+from csv_reader import CsvReader
 import matplotlib.patches as patches
-from filter import FilterOption, filter  # Assuming you have a filtering module
+from filter import FilterOption, filter
 
 # Setting the style for the plot
 plt.style.use('dark_background')

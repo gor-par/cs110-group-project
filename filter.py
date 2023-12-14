@@ -4,7 +4,7 @@ from filter_functions import functions, \
 
 
 class FilterOption:
-    '''
+    """
     a class for building data filtration queries
 
     Args:
@@ -14,45 +14,46 @@ class FilterOption:
     column (str): name of the column in the table
     target (any): the target for comparison
     [format (str)]: format of the date string, only for date types
-    '''
+    """
 
-    def __init__(self,
-                 filter_type: Literal['string', 'number', 'date'],
-                 function: str,
-                 column: str,
-                 target,
-                 format: Optional[str] = None
-                 ):
-    '''
+
+def __init__(self,
+             filter_type: Literal['string', 'number', 'date'],
+             function: str,
+             column: str,
+             target,
+             format: Optional[str] = None
+             ):
+    """
     Initialize a filter for a specific column based on type, function, and target.
-    '''                
+    """
 
-        self.type = filter_type
+    self.type = filter_type
 
-        if self.type == "date":
-            if format is None:
-                raise ValueError("Date type requires a format")
-            else:
-                self.format = format
-
-        if function in function_support[self.type]:
-            self.function = functions[function]
+    if self.type == "date":
+        if format is None:
+            raise ValueError("Date type requires a format")
         else:
-            raise ValueError(
-                f' "{function}" comparison does not support {self.type} type'
-            )
+            self.format = format
 
-        if function == "during" and type(target) is not tuple:
-            raise ValueError(
-                "During comparison requires a tuple with two months"
-            )
+    if function in function_support[self.type]:
+        self.function = functions[function]
+    else:
+        raise ValueError(
+            f' "{function}" comparison does not support {self.type} type'
+        )
 
-        self.column = column
-        self.target = target
+    if function == "during" and type(target) is not tuple:
+        raise ValueError(
+            "During comparison requires a tuple with two months"
+        )
+
+    self.column = column
+    self.target = target
 
 
 def filter(raw_rows: list, options: list[FilterOption]):
-    '''
+    """
     filters the rows with the provided filter queries
 
     Args:
@@ -60,7 +61,7 @@ def filter(raw_rows: list, options: list[FilterOption]):
     options (list[FilterOption]): FilterOption instance queries
 
     Returns a sublist of the original list
-    '''
+    """
     filtered_rows = []
 
     for row in raw_rows:
@@ -71,10 +72,10 @@ def filter(raw_rows: list, options: list[FilterOption]):
 
 
 def does_pass(row, options):
-    '''
+    """
     helper function, returns True if row suffices all the filters,
     fires False with the first match
-    '''
+    """
     for option in options:
 
         if option.type == "date":
