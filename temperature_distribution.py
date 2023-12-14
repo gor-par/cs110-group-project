@@ -37,7 +37,14 @@ def plot_temperature_point(ax, lon, lat, temp, color):
 
 
 # Mapping temperature ranges to colors
-color_map = {40: 'darkred', 30: 'red', 20: 'orange', 10: 'yellow', 0: 'green', -10: 'blue'}
+color_map = {
+    40: 'darkred',
+    30: 'red',
+    20: 'orange',
+    10: 'yellow',
+    0: 'green',
+    -10: 'blue'
+}
 
 # Plotting temperature points on the map based on temperature ranges
 for row in dataset.rows:
@@ -58,4 +65,3 @@ for row in dataset.rows:
 plt.title('Temperature Distribution Map')
 # Displaying the plot
 plt.show()
-

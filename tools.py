@@ -3,28 +3,20 @@ import statistics
 
 def get_values(rows, column):
     """
-    Extracts and returns a list of numeric values from a specific column in a list of dictionaries.
+    Extracts and returns a list of numeric values from a specific column
+    in a list of dictionaries.
 
     Parameters:
-    - rows (list of dict): A list containing dictionaries representing rows of data.
-    - column (str): The column key from which numeric values will be extracted.
+    - rows (list of dict): A list containing dictionaries
+    representing rows of data.
+    - column (str): The column key from which numeric values
+    will be extracted.
 
     Returns:
-    - list of float: A list containing the numeric values from the specified column.
+    - list of float: A list containing the numeric values
+    from the specified column.
 
     """
-
-    # # remove
-
-    # arr = []
-    # for row in rows:
-    #     if (row[column] is None):
-    #         continue
-    #     arr.append(float(row[column]))
-
-    # return arr
-
-    # # stop
 
     return [float(row[column]) for row in rows]
 

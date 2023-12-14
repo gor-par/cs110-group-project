@@ -24,8 +24,9 @@ for country in countries:
     country_filter = [
         FilterOption('string', 'equal', 'country', country),
     ]
-    # Calculating the average temperature for the filtered rows
-    avg_temps.append(get_column_mean(filter(dataset.rows, country_filter), 'temperature_celsius'))
+    # Calculating the average temperature for the filtered rows.
+    avg_temps.append(get_column_mean(
+        filter(dataset.rows, country_filter), 'temperature_celsius'))
 
 # Plotting a histogram of average temperatures
 plt.hist(avg_temps, bins=10, color="green", ec="black")
