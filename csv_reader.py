@@ -6,9 +6,9 @@ from utils import get_input, InvalidFilenameError
 class CsvReader:
 
     def __init__(self, path):
-        '''
+        """
         Creates a CsvReader instance, opens the data and parses it
-        '''
+        """
         try:
             CsvReader.verify_path(path)
             self.path = path
@@ -25,12 +25,12 @@ class CsvReader:
             raise
 
     def verify_path(path):
-        '''
+        """
         Checks the path to be a csv file and raises an error if not
 
         Args:
         path (str): path to verify
-        '''
+        """
 
         if path[-3:].lower() != 'csv':
             raise InvalidFilenameError("File is not CSV")
@@ -40,9 +40,9 @@ class CsvReader:
             raise InvalidFilenameError("Need permission to read the file")
 
     def __parse_csv(self):
-        '''
+        """
         Parses and stores the rows and fieldnames of the dataset
-        '''
+        """
         reader = csv.DictReader(self.__file)
 
         rows = []
@@ -59,13 +59,13 @@ class CsvReader:
         self.fieldnames = reader.fieldnames
 
     def __round_if_numeric(self, string):
-        '''
+        """
         Args:
         string (str): The data entry to be rounded
 
         Returns:
         unchanged string or float rounded to 0.001
-        '''
+        """
         try:
             return round(float(string), 3)
         except ValueError:
@@ -74,8 +74,8 @@ class CsvReader:
             return string
 
     def update_metadata(self):
-        '''
+        """
         updates row and column count after change
-        '''
+        """
         self.length = len(self.rows)
         self.column_count = len(self.fieldnames)

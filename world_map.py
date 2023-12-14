@@ -12,7 +12,7 @@ dataset = CsvReader('GlobalWeatherRepository.csv')
 
 # Creating subplots and loading the map image
 fig, ax = plt.subplots()
-img = plt.imread('visuals/map.png')
+img = plt.imread('map.png')
 ax.imshow(img, extent=[-180, 180, -90, 90])
 
 
@@ -29,30 +29,31 @@ ax.format_coord = format_coord
 ax.set_xlabel('Latitude')
 ax.set_ylabel('Longitude')
 
+
+# Plotting temperature points on the map based on temperature ranges
+# Function to plot temperature point
+def plot_temperature_point(ax, lon, lat, temp, color):
+    ax.text(lon, lat, '+', color=color)
+
+
+# Mapping temperature ranges to colors
+color_map = {40: 'darkred', 30: 'red', 20: 'orange', 10: 'yellow', 0: 'green', -10: 'blue'}
+
 # Plotting temperature points on the map based on temperature ranges
 for row in dataset.rows:
-    # Getting latitude and longitude values
-    lat = row.get('latitude')
-    lon = row.get('longitude')
+    lat, lon, temp = (row.get('latitude'), row.get('longitude'),
+                      row.get('temperature_celsius'))
 
-    # Getting the temperature variable
-    temp = row.get('temperature_celsius')
+    # Finding the appropriate color based on temperature
+    color = next(
+        (color for threshold, color in color_map.items()
+         if threshold < temp <= threshold + 10),
+        'darkblue'
+    )
 
-    # Assigning colors based on temperature ranges and plotting on the map
-    if temp > 40:
-        ax.text(lon, lat, '+', color='darkred')
-    elif 30 < temp <= 40:
-        ax.text(lon, lat, '+', color='red')
-    elif 20 < temp <= 30:
-        ax.text(lon, lat, '+', color='orange')
-    elif 10 < temp <= 20:
-        ax.text(lon, lat, '+', color='yellow')
-    elif 0 < temp <= 10:
-        ax.text(lon, lat, '+', color='green')
-    elif -10 < temp <= 0:
-        ax.text(lon, lat, '+', color='blue')
-    else:
-        ax.text(lon, lat, '+', color='darkblue')
+    # Plotting temperature point using the function
+    plot_temperature_point(ax, lon, lat, temp, color)
 
 # Displaying the plot
 plt.show()
+

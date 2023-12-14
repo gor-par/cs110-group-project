@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="72e79838-8029-4267-ac4a-cca0c81616bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/filter_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/histogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/histogram.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanitize.py" beforeDir="false" afterPath="$PROJECT_DIR$/sanitize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table.py" beforeDir="false" afterPath="$PROJECT_DIR$/table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visuals/map.png" beforeDir="false" afterPath="$PROJECT_DIR$/map.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/world_map.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +53,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ani_g\PycharmProjects\cs110-group-project" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="example_usage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Homework" />
