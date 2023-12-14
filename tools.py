@@ -3,21 +3,23 @@ import statistics
 
 def get_values(rows, column):
     """
-        Extracts and returns a list of numeric values from a specific column in a list of dictionaries.
+    Extracts and returns a list of numeric values from a specific column in a list of dictionaries.
 
-        Parameters:
-        - rows (list of dict): A list containing dictionaries representing rows of data.
-        - column (str): The column key from which numeric values will be extracted.
+    Parameters:
+    - rows (list of dict): A list containing dictionaries representing rows of data.
+    - column (str): The column key from which numeric values will be extracted.
 
-        Returns:
-        - list of float: A list containing the numeric values from the specified column.
-        """
+    Returns:
+    - list of float: A list containing the numeric values from the specified column.
+
+    """
     return [float(row[column]) for row in rows]
 
 
 def get_column_mean(rows, column):
     """
     Calculate the mean of a specified column.
+
     """
     values = get_values(rows, column)
 
@@ -38,9 +40,10 @@ def get_column_median(rows, column):
 
 
 def get_column_mode(rows, column):
-"""
-Find the mode of a specified column.
-"""
+    """
+    Find the mode of a specified column.
+
+    """
     values = get_values(rows, column)
 
     mode = statistics.mode(values)
@@ -51,6 +54,7 @@ Find the mode of a specified column.
 def get_column_stdev(rows, column):
     """
     Calculate the standard deviation of a specified column.
+
     """
     values = get_values(rows, column)
 
@@ -62,6 +66,7 @@ def get_column_stdev(rows, column):
 def get_column_min(rows, column):
     """
     Find the minimum value of a specified column.
+
     """
     values = get_values(rows, column)
 
@@ -73,6 +78,7 @@ def get_column_min(rows, column):
 def get_column_max(rows, column):
     """
     Find the maximum value of a specified column.
+
     """
     values = get_values(rows, column)
 
@@ -84,6 +90,7 @@ def get_column_max(rows, column):
 def get_column_range(rows, column):
     """
     Calculate the range of a specified column.
+
     """
     values = get_values(rows, column)
 

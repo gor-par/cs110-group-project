@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="72e79838-8029-4267-ac4a-cca0c81616bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/filter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/filter_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/filter_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/world_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/histogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/histogram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanitize.py" beforeDir="false" afterPath="$PROJECT_DIR$/sanitize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table.py" beforeDir="false" afterPath="$PROJECT_DIR$/table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

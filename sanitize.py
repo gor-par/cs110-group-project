@@ -47,9 +47,9 @@ def cli():
 
 
 def validate_input(args):
-    '''
+    """
     Handles the improper arguments
-    '''
+    """
 
     state = ValidationState()
 
@@ -65,11 +65,11 @@ def validate_input(args):
 
 
 def drop_duplicates(rows):
-    '''
+    """
     Removes ientical objects in the list
 
     Returns a tuple of unique row list and count of dropped rows
-    '''
+    """
     unique_rows_set = set()
     unique_rows = []
 
@@ -86,11 +86,11 @@ def drop_duplicates(rows):
 
 
 def handle_nones(rows):
-    '''
+    """
     Replaces the None values in numerical columns with the appropriate means
 
     Returns a tuple of list ofsanitized rows and the count of None values
-    '''
+    """
 
     find_nones(rows)
     count_column_means(rows)
@@ -106,10 +106,10 @@ def handle_nones(rows):
 
 
 def find_nones(rows):
-    '''
+    """
     Iterates over the rows, records each occurence of a None value in a 
     dictionary to replace later
-    '''
+    """
     for index, row in enumerate(rows):
         for column, value in row.items():
             if value is None:
@@ -117,10 +117,10 @@ def find_nones(rows):
 
 
 def count_column_means(rows):
-    '''
+    """
     Counts the mean of the columns, excluding None value rows from the 
     calculation
-    '''
+    """
 
     # makes sets from index lists to boost performance
     for column in dataset_none_indices:
@@ -142,9 +142,9 @@ def count_column_means(rows):
 
 
 def write_csv(rows, path, fieldnames):
-    '''
+    """
     Simple function that writes the sanitized rows into a new CSV file
-    '''
+    """
     with open(path, "w") as output_file:
         writer = csv.DictWriter(output_file, fieldnames)
         writer.writeheader()

@@ -111,7 +111,6 @@ def is_during(value, date_range, format):
     return value_month in month_range(*date_range)
 
 
-
 function_support_per_type = {
     'string': ['equal'],
     'number': ['equal', 'larger', 'smaller'],

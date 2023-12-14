@@ -27,9 +27,9 @@ def cli():
 
 
 def validate_input(args):
-    '''
+    """
     Handles the improper arguments
-    '''
+    """
 
     state = ValidationState()
 
@@ -48,14 +48,14 @@ def validate_input(args):
 
 
 def draw_table(dataset, column_length=10):
-    '''
+    """
     creates and prints a table representation of the given dataset
 
     Args:
     dataset (CsvReader): source csv data
     column_length (int): length of the columns, default = 10
 
-    '''
+    """
 
     # Variable that tells to shorten the table if it has more than 10 columns
     is_table_long = False
@@ -93,7 +93,7 @@ def draw_table(dataset, column_length=10):
 
 
 def add_metadata(table, dataset, table_length):
-    '''
+    """
     Adds the first line with the name, row and column count
 
     Args:
@@ -101,7 +101,7 @@ def add_metadata(table, dataset, table_length):
     dataset (CsvReader): metadata holder
     table_length: length of the table, including the edges
 
-    '''
+    """
     metadata_row = f'{dataset.filename}:' \
                    f' {dataset.length} Rows, {dataset.column_count} Columns'
     table += format_to_length_n(metadata_row, table_length - 2) + "|"
@@ -110,7 +110,7 @@ def add_metadata(table, dataset, table_length):
 
 
 def add_table_headings(table, fieldnames, column_length, is_table_long):
-    '''
+    """
     Adds headings to the table
 
     Args:
@@ -121,7 +121,7 @@ def add_table_headings(table, fieldnames, column_length, is_table_long):
 
     Returs:
     str: the edited table
-    '''
+    """
     names = shorten_list(fieldnames) if is_table_long else fieldnames
 
     for name in names:
@@ -132,7 +132,7 @@ def add_table_headings(table, fieldnames, column_length, is_table_long):
 
 
 def populate_table(table, rows, column_length, row_break, is_table_long):
-    '''
+    """
     Adds new rows to the table
 
     Args:
@@ -144,7 +144,7 @@ def populate_table(table, rows, column_length, row_break, is_table_long):
 
     Returs:
     str: the edited table
-    '''
+    """
     for row in rows:
         values = shorten_list(row) if is_table_long else row.values()
 
@@ -156,7 +156,7 @@ def populate_table(table, rows, column_length, row_break, is_table_long):
 
 
 def format_to_length_n(string, length):
-    '''
+    """
     Returns a formatted string of the given length, using spaces and dots
 
     Args:
@@ -166,7 +166,7 @@ def format_to_length_n(string, length):
     Returns:
     str: the formatted string 
 
-    '''
+    """
 
     if len(string) < length:
         return string + " " * (length - len(string))
@@ -177,12 +177,12 @@ def format_to_length_n(string, length):
 
 
 def shorten_list(array):
-    '''
+    """
     Returns the first and last five array elements, with an "..." element in between
 
     Args:
     array (iterable)
-    '''
+    """
     if type(array) is not list:
         array = list(array.values())
     return [*array[:5], "...", *array[-5:]]
