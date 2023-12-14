@@ -23,6 +23,9 @@ class FilterOption:
                  target,
                  format: Optional[str] = None
                  ):
+    '''
+    Initialize a filter for a specific column based on type, function, and target.
+    '''                
 
         self.type = filter_type
 
