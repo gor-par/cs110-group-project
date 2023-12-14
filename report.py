@@ -1,4 +1,3 @@
-# Import the necessary modules
 import os
 import webbrowser
 from jinja2 import Environment, FileSystemLoader
@@ -97,7 +96,7 @@ template = """
     {% if not loop.first %}<p>{{ picture.description }}</p>{% endif %}
     {% endfor %}
     <center> <pre>
-    # Here goes some useful python code for report
+    print("Thank you for your attention, we are almost over")
     </pre></center>
     
 </body>
