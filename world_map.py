@@ -54,6 +54,8 @@ for row in dataset.rows:
     # Plotting temperature point using the function
     plot_temperature_point(ax, lon, lat, temp, color)
 
+# adding the title
+plt.title('Temperature Distribution Map')
 # Displaying the plot
 plt.show()
 
