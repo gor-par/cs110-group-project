@@ -16,7 +16,6 @@ autumn_query = [
 ]
 
 autumn_rows = filter(data.rows, autumn_query)
-print(autumn_rows)
 
 
 sunny_day_counts = {}

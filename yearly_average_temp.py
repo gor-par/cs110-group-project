@@ -5,22 +5,22 @@ import matplotlib.pyplot as plt
 
 data = CsvReader('nordics_weather.csv')
 
-norway_query = [
-    FilterOption("string", "equal", "country", "Norway", None),
+sweden_query = [
+    FilterOption("string", "equal", "country", "Sweden", None),
 ]
 
-norway_winter_only_query = [
-    FilterOption("string", "equal", "country", "Norway", None),
+sweden_winter_only_query = [
+    FilterOption("string", "equal", "country", "Sweden", None),
     FilterOption("date", 'during', 'date', (12, 2), '%m/%d/%Y')
 ]
 
-norway_rows = filter(data.rows, norway_query)
-norway_yearly_rows = []
+sweden_rows = filter(data.rows, sweden_query)
+sweden_yearly_rows = []
 yearly_average_temps = []
 yearly_average_mins = []
 
-norway_winter_rows = filter(data.rows, norway_winter_only_query)
-norway_yearly_winter_rows = []
+sweden_winter_rows = filter(data.rows, sweden_winter_only_query)
+sweden_yearly_winter_rows = []
 yearly_winter_average_temps = []
 yearly_winter_average_mins = []
 
@@ -32,22 +32,22 @@ for year in range(2015, 2020):
         FilterOption("date", "before", "date", f'12/31/{year}', '%m/%d/%Y'),
     ]
 
-    this_year_general_rows = filter(norway_rows, this_year_query)
-    norway_yearly_rows.append(this_year_general_rows)
+    this_year_general_rows = filter(sweden_rows, this_year_query)
+    sweden_yearly_rows.append(this_year_general_rows)
 
-    this_year_winter_rows = filter(norway_winter_rows, this_year_query)
+    this_year_winter_rows = filter(sweden_winter_rows, this_year_query)
 
-    norway_yearly_winter_rows.append(this_year_winter_rows)
+    sweden_yearly_winter_rows.append(this_year_winter_rows)
 
 
-for year_rows in norway_yearly_rows:
+for year_rows in sweden_yearly_rows:
     this_year_average_temp = get_column_mean(year_rows, "tavg")
     yearly_average_temps.append(this_year_average_temp)
 
     this_year_average_min = get_column_mean(year_rows, "tmin")
     yearly_average_mins.append(this_year_average_min)
 
-for year_rows in norway_yearly_winter_rows:
+for year_rows in sweden_yearly_winter_rows:
     this_winter_average_temp = get_column_mean(year_rows, "tavg")
     yearly_winter_average_temps.append(this_winter_average_temp)
 
@@ -73,7 +73,7 @@ for i, data in enumerate([yearly_average_temps, yearly_average_mins, yearly_wint
 ax.set_ylabel('Temperature (Celsius)')
 ax.set_xlabel('Year')
 ax.set_title('Change in average temperatures over the years')
-ax.set_ylim(-7, 6)
+ax.set_ylim(-9, 8)
 
 ax.set_xticks([val + width for val in x])
 ax.set_xticklabels(list(range(2015, 2020)))

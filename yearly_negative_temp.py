@@ -8,7 +8,7 @@ year_range = range(2015, 2020)
 
 negative_query = [
     FilterOption("number", "smaller", "tavg", 0, None),
-    FilterOption("string", "equal", "country", "Norway", None),
+    FilterOption("string", "equal", "country", "Sweden", None),
 ]
 
 negative_rows = filter(data.rows, negative_query)
@@ -61,9 +61,9 @@ for i, data in enumerate([yearly_negative_counts, yearly_spring_negative_counts,
 
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_ylabel('Temperature (Celsius)')
+ax.set_ylabel('Number of days')
 ax.set_xlabel('Year')
-ax.set_title('Change in average temperatures over the years')
+ax.set_title('Change in cold day distribution')
 ax.set_ylim(0, 200)
 
 ax.set_xticks([val + width for val in x])

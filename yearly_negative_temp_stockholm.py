@@ -118,13 +118,13 @@ ax.plot(year_range, yearly_fall_negative_counts, label="Fall")
 
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_ylabel('Temperature (Celsius)')
+ax.set_ylabel('Number of days')
 ax.set_xlabel('Year')
-ax.set_title('Change in average temperatures over the years')
+ax.set_title('Change in cold day distribution')
 # ax.set_ylim(0, 200)
 
 ax.set_xticks(range(1997, 2022, 3))
 
-ax.set_title('Climate Change')
+
 plt.legend()
 plt.show()

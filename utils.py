@@ -48,4 +48,7 @@ class InvalidFilenameError(Exception):
 
 
 def fahr_to_cel(fahr):
+    '''
+    Converts Fahrenheits to Celsius
+    '''
     return (fahr - 32) * 5/9
