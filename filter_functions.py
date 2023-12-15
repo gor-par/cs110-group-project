@@ -12,7 +12,8 @@ def month_range(start, end):
     Returns:
         range: A range of months.
     """
-    return range(start, end + 1) if start < end else [*range(start, 13), *range(1, end + 1)]
+    return range(start, end + 1) if start < end \
+        else [*range(start, 13), *range(1, end + 1)]
 
 
 def is_equal(value, target, format=None):
@@ -30,7 +31,8 @@ def is_equal(value, target, format=None):
     if format is None:
         return value in target if type(target) is list else value == target
 
-    value_date, target_date = datetime.strptime(value, format).date(), datetime.strptime(target, format).date()
+    value_date, target_date = datetime.strptime(
+        value, format).date(), datetime.strptime(target, format).date()
     return value_date == target_date
 
 
@@ -74,7 +76,8 @@ def is_before(value, target, format):
     Returns:
     bool: True if before, False otherwise.
     """
-    value_date, target_date = datetime.strptime(value, format).date(), datetime.strptime(target, format).date()
+    value_date, target_date = datetime.strptime(
+        value, format).date(), datetime.strptime(target, format).date()
     return value_date < target_date
 
 
@@ -90,7 +93,8 @@ def is_after(value, target, format):
     Returns:
     bool: True if after, False otherwise.
     """
-    value_date, target_date = datetime.strptime(value, format).date(), datetime.strptime(target, format).date()
+    value_date = datetime.strptime(value, format).date()
+    target_date = datetime.strptime(target, format).date()
     return value_date > target_date
 
 

@@ -36,7 +36,7 @@ class ValidationState:
 
 class InvalidFilenameError(Exception):
     """
-    A custom exception for utilizing functions to listen to 
+    A custom exception for utilizing functions to listen to
     """
 
     def __init__(self, message):

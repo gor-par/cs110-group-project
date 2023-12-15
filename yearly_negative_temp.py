@@ -54,7 +54,9 @@ fig, ax = plt.subplots(layout='constrained')
 
 
 # Plotting each dataset separately but side by side
-for i, data in enumerate([yearly_negative_counts, yearly_spring_negative_counts, yearly_fall_negative_counts]):
+for i, data in enumerate([yearly_negative_counts,
+                          yearly_spring_negative_counts,
+                          yearly_fall_negative_counts]):
     offset = width * i
     ax.bar([val + offset for val in x], data,
            width=width, label=f"Dataset {i+1}")

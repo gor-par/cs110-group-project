@@ -1,6 +1,6 @@
 import os
 import csv
-from utils import get_input, InvalidFilenameError
+from utils import InvalidFilenameError
 
 
 class CsvReader:

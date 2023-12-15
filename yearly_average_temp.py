@@ -63,7 +63,10 @@ fig, ax = plt.subplots(layout='constrained')
 
 
 # Plotting each dataset separately but side by side
-for i, data in enumerate([yearly_average_temps, yearly_average_mins, yearly_winter_average_temps, yearly_winter_average_mins]):
+for i, data in enumerate([yearly_average_temps,
+                          yearly_average_mins,
+                          yearly_winter_average_temps,
+                          yearly_winter_average_mins]):
     offset = width * i
     ax.bar([val + offset for val in x], data,
            width=width, label=f"Dataset {i+1}")

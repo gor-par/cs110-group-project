@@ -1,6 +1,6 @@
 import argparse
 from csv_reader import CsvReader
-from utils import get_input, ValidationState, InvalidFilenameError
+from utils import ValidationState, InvalidFilenameError
 
 parser = argparse.ArgumentParser(
     description='Dsiplays a table with metadata and example rows'
@@ -23,7 +23,6 @@ def cli():
 
     dataset = CsvReader(args.path)
     draw_table(dataset, args.column_length)
-
 
 
 def validate_input(args):
@@ -103,7 +102,7 @@ def add_metadata(table, dataset, table_length):
 
     """
     metadata_row = f'{dataset.filename}:' \
-                   f' {dataset.length} Rows, {dataset.column_count} Columns'
+        f' {dataset.length} Rows, {dataset.column_count} Columns'
     table += format_to_length_n(metadata_row, table_length - 2) + "|"
 
     return table
@@ -117,7 +116,8 @@ def add_table_headings(table, fieldnames, column_length, is_table_long):
     table (str): the ascii table to manipualte
     fieldnames (list<str>): the fieldnames to add...
     columng_length (int): length of one column
-    is_table_long (bool): if true, will only print the first and last five field names
+    is_table_long (bool): if true, will only print
+            the first and last five field names
 
     Returs:
     str: the edited table
@@ -140,7 +140,8 @@ def populate_table(table, rows, column_length, row_break, is_table_long):
     rows (list): the dataset entries to add to the table
     columng_length (int): length of one column
     row_break (str): string of the row break
-    is_table_long (bool): if true, will only print the first and last five elements of each row
+    is_table_long (bool): if true, will only print the
+            first and last five elements of each row
 
     Returs:
     str: the edited table
@@ -164,7 +165,7 @@ def format_to_length_n(string, length):
     length (int): final length
 
     Returns:
-    str: the formatted string 
+    str: the formatted string
 
     """
 
@@ -178,7 +179,8 @@ def format_to_length_n(string, length):
 
 def shorten_list(array):
     """
-    Returns the first and last five array elements, with an "..." element in between
+    Returns the first and last five array elements, with an "..." element
+    in between
 
     Args:
     array (iterable)
