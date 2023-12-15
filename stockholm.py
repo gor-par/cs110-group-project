@@ -17,7 +17,7 @@ query = [
 ]
 
 
-yerevan_rows = filter(data.rows, query)
+stockholm_rows = filter(data.rows, query)
 yearly_rows = []
 yearly_average_temps = []
 yearly_average_mins = []
@@ -30,7 +30,7 @@ for year in year_range:
         FilterOption("date", "before", "DATE", f'{year}-12-31', date_format),
     ]
 
-    this_year_general_rows = filter(yerevan_rows, this_year_query)
+    this_year_general_rows = filter(stockholm_rows, this_year_query)
     yearly_rows.append(this_year_general_rows)
 
 
@@ -59,13 +59,13 @@ for i, this_list in enumerate(plot_lists):
 
 ax.set_ylabel('Temperature (Celsius)')
 ax.set_xlabel('Year')
-ax.set_title('Change in average temperatures over the years')
+ax.set_title('Change in average min and max temperatures over the years')
 
 ax.set_ylim(-10, 70)
 ax.set_xticks(range(1997, 2022, 3))
 
 
-ax.plot(year_range, plot_lists[0], label="Yearly Average")
+ax.plot(year_range, plot_lists[0], label="Yearly Max")
 ax.plot(year_range, plot_lists[1], label="Yearly Min")
 
 

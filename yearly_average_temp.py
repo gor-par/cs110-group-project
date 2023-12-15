@@ -62,16 +62,6 @@ width = 0.2  # width of the bars
 fig, ax = plt.subplots(layout='constrained')
 
 
-# ax.bar(x, tuple(yearly_average_temps), width, label="Gen. Avg.")
-# ax.bar_label("Gen. Avg.", padding=1)
-# ax.bar(x, tuple(yearly_average_mins), width, label="Gen. Min.")
-# ax.bar_label("Gen. Min.", padding=1)
-# ax.bar(x, tuple(yearly_winter_average_temps), width, label="Win. Avg.")
-# ax.bar_label("Win. Avg.", padding=1)
-# ax.bar(x, tuple(yearly_winter_average_mins), width, label="Win. Min.")
-# ax.bar_label("Win. Min.", padding=1)
-
-
 # Plotting each dataset separately but side by side
 for i, data in enumerate([yearly_average_temps, yearly_average_mins, yearly_winter_average_temps, yearly_winter_average_mins]):
     offset = width * i
@@ -83,7 +73,7 @@ for i, data in enumerate([yearly_average_temps, yearly_average_mins, yearly_wint
 ax.set_ylabel('Temperature (Celsius)')
 ax.set_xlabel('Year')
 ax.set_title('Change in average temperatures over the years')
-ax.set_ylim(-7, 5)
+ax.set_ylim(-7, 6)
 
 ax.set_xticks([val + width for val in x])
 ax.set_xticklabels(list(range(2015, 2020)))

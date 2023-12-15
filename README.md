@@ -83,34 +83,16 @@ git push -u origin development
 
   - ~~FilterOption class to help writing the queries~~
 
-- mean | median | range.... stuff like this
-
-- maybe a wrapper function for data.filter(filterOptions).analysis
-
-- plotting
+...
 
 - add the docstrings and stuff written in the requirements
 
-def filter
+- Add general statistics (range, median) to the table.py
 
-def mean
-
-def find_mean in this for this days
-filter countr
-filter date
-mean | median |
-
-def findresults (mean or media, column, filters)
-filter 1
-filter 2
-mean
-
-filters = {
-country: albania
-start_day: march 31
-
-}
-
-findresutls(mean, max_temerature, filters)
-
-read
+- Global warming for nordic countries
+  - correlation of snow with rain [and average temperatures]
+  - Average temperature in Norway during winter months, through years, and it's change + average lowest and highest
+  - compare global average temperatures over the same time in the world, but this can be just the temperature (check all the region, as in [norway, sweden, finland])
+  - Compare those three things with other countries to see if the trend is keeping up and it is indeed warming up
+  - maybe shift in snow?
+    - like, calculate the amount or median snow depth of snow during oct-may per month, and graph the annual change in each month to see whether snow is getting delayed or starts to come early
